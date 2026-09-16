@@ -2,8 +2,7 @@
 alias cdp='cd ${HOME}/projects;'
 alias cpd='cdp'
 alias cdd='cd ${HOME}/Downloads; clas;'
-alias cds='cd ${HOME}/Desktop/'
-alias cdss='cd ${HOME}/scripts/; clas'
+alias cds='cd ${HOME}/Desktop/; clas'
 alias cdds='cdss'
 alias cdu='cd $HOME}; clas;'
 alias las='ls -las'
@@ -29,3 +28,18 @@ remove_files_on_clipboard() {
 
 alias rmfc='remove_files_on_clipboard'
 alias rmcp='remove_files_on_clipboard'
+
+
+### HTTP Server
+http_server_dir() {
+    if [ -n "$2" ]; then
+        serve -s "$1" -l "$2"
+    else
+        serve -s "$1"
+    fi
+}
+
+alias hserve="http_server_dir"
+alias http_server="http_server_dir"
+alias http-server="http_server"
+alias serverh="http_server_dir"

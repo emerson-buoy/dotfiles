@@ -14,3 +14,10 @@ alias android-text="android_text"
 alias android-input="android_text"
 alias android-screenshot="android_screenshot"
 alias android-devices="android_devices"
+
+get_file_from_android_device() {
+    # adb pull storage/emulated/0/here/20260320_152859.jpg .
+    adb pull storage/emulated/0/here/$1 $2
+}
+
+alias get_file_from_android="get_file_from_android_device"

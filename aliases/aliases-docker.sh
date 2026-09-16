@@ -48,3 +48,17 @@ function dup() {
 
 alias ddown="ddown"
 alias dup="dup"
+
+alias dc_build="docker compose build"
+alias dc_up="docker compose up"
+alias dc_upd="docker compose up -d"
+alias dc_udp="dc_upd"
+alias dc_pud="dc_upd"
+alias dc_upa="docker compose up"
+
+alias dc-build="dc_build"
+alias dc-up="dc_up"
+alias dc-upd="dc_upd"
+alias dc-pud="dc_upd"
+alias dc-udp="dc_udp"
+alias dc-upa="dc_upa"

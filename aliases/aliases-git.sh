@@ -1,3 +1,8 @@
+export LESS=""
+export GIT_PAGER=cat
+
+GITHUB_USER="emerson-buoy"
+
 alias add_all="~/scripts/src/sh/add-all-and-commit.sh"
 alias add-all="add_all"
 alias addall="add_all"
@@ -87,8 +92,6 @@ alias create-branch="git checkout -b $1"
 alias crebranch="create-branch"
 # end git
 
-
-
 ## Copy diff to clipboard
 
 alias copy-diff="~/scripts/src/sh/copy-diff.sh"
@@ -118,45 +121,24 @@ alias gcnv="git add .; git commit --no-verify"
 
 url_from_branch() {
     # works with github only.
-    # Get the remote origin URL
-    local url=$(git config --get remote.origin.url)
-
-    # exit if there's no git folder
     if [ ! -d .git ]; then
-        echo "https://github.com/emersondemetrio/repositories"
+        echo "https://github.com"
+        return
     fi
-
-    # Remove any extra forward slashes and colons from the URL
-    url=$(echo "$url" | sed -E 's#^(https?:/?/?)/#https://#')
-
-    # Check if the URL is in SSH format
-    if [[ $url == git@* ]]; then
-        # Convert SSH format to HTTPS format
-        url=$(echo "$url" | sed -E 's#^git@([^:]+):#https://\1/#')
-    fi
-
-    # Remove the .git suffix if present
-    url=${url%.git}
-
-    # Clean up any remaining double slashes (except after https:)
-    url=$(echo "$url" | sed -E 's#([^:])//+#\1/#g')
-
-    # If the URL is already in HTTPS format, ensure it's correctly formatted
-    if [[ $url == https://* ]]; then
-        echo "$url"
-    else
-        # Prefix with https:// if not already present
-        echo "https://$url"
-    fi
+    local url=$(git config --get remote.origin.url)
+    echo "$url" | sed -E 's#^git@([^:]+):#https://\1/#; s#\.git$##; s#([^:])//+#\1/#g'
 }
 
 # Alias to open the remote repository in Google Chrome
-alias open-remote='chrome "$(url_from_branch)"'
-alias open-issues='chrome "$(url_from_branch)/issues"'
-alias open-mrs='chrome "$(url_from_branch)/pulls"'
-alias merges='chrome "$(url_from_branch)/pulls/$USER"'
+alias all-merges='chrome "$(url_from_branch)/pulls"'
+alias allm="all-merges"
+alias merges='chrome "$(url_from_branch)/pulls/$GITHUB_USER"'
 alias merg="merges"
-alias mrgs="merges"
-alias mr="merges"
+alias mer="merges"
 
 alias no_edit_amend_and_push="echo 'Assuming you have added files already.'; git commit --amend --no-edit --no-verify; git push -f"
+
+gitcommit() {
+  TICKET=$(git symbolic-ref --short HEAD 2>/dev/null | grep -ioE 'dev-[0-9]+' | head -1 | tr '[:lower:]' '[:upper:]')
+  git commit -m "${TICKET:+$TICKET }$@"
+}

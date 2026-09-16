@@ -18,6 +18,10 @@ const locations = [
 		location: 'Munich',
 	},
 	{
+		timeZone: 'Pacific/Auckland',
+		location: 'New Zealand',
+	},
+	{
 		timeZone: here,
 		location: 'Local',
 	},

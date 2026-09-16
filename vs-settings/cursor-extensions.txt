@@ -1,7 +1,6 @@
 albert.tabout
 astro-build.astro-vscode
 aykutsarac.jsoncrack-vscode
-bobmagicii.autofoldyeah
 charliermarsh.ruff
 dart-code.dart-code
 dart-code.flutter

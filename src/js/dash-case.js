@@ -1,4 +1,4 @@
-#!/Users/emersondemetrio/.nvm/versions/node/v24.11.0/bin/node
+#!/Users/emersondemetrio/.nvm/versions/node/v24.14.0/bin/node
 
 const cleanUpString = (s, exceptions = []) => {
   // Create a regex pattern that excludes the exceptions
@@ -9,6 +9,7 @@ const cleanUpString = (s, exceptions = []) => {
   return s
     .toLowerCase() // A -> a
     .replace(/[\[\]]/g, "") // [ge-123] -> ge-123
+    .replace(/\/+/g, "-") // / -> -
     .replace(new RegExp(exceptionsPattern, 'g'), "") // non alphanumeric (except exceptions) -> ""
     .replace(/\s+/g, "-") // space -> -
     .trim(); // trim

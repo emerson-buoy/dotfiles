@@ -5,6 +5,7 @@ aliases/aliases-ops-tooling.sh
 aliases/aliases-surfer.sh
 aliases/aliases-flaggr.sh
 aliases/aliases-fleet.sh
+aliases/aliases-company.sh
 
 aliases/chrome.json
 
