@@ -39,5 +39,5 @@ ffmpeg -y \
 
 echo
 echo
-ls -las | grep "gif"
+ls -lhas | grep "gif"
 echo "Done!"

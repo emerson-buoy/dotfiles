@@ -1,61 +1,46 @@
 {
+    "window.commandCenter": true,
     "editor.snippetSuggestions": "top",
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
-    "prettier.useTabs": true,
+    "prettier.useTabs": false,
     "workbench.startupEditor": "none",
     "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "editor.renderControlCharacters": true,
     "files.autoSave": "afterDelay",
     "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "editor.accessibilitySupport": "off",
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "prettier.tabWidth": 4,
     "explorer.confirmDelete": false,
     "editor.minimap.enabled": false,
     "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "security.workspace.trust.enabled": false,
     "security.workspace.trust.untrustedFiles": "newWindow",
     "prettier.singleQuote": true,
-    "[dart]": {
-        "editor.suggest.snippetsPreventQuickSuggestions": false,
-        "editor.suggestSelection": "first",
-        "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": "off",
-        "editor.selectionHighlight": false,
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "editor.rulers": [
-            80
-        ]
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.stylelint": "explicit",
-        "source.fixAll.eslint": "explicit"
-    },
     "files.trimTrailingWhitespace": true,
     "editor.renderWhitespace": "all",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.inlayHints.enabled": false,
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1",
-        "Q_NEW_SESSION": "1"
+        "Q_NEW_SESSION": "1",
     },
     "explorer.confirmDragAndDrop": false,
     "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "redhat.telemetry.enabled": false,
     "cSpell.userWords": [
@@ -72,49 +57,39 @@
         "Onfido",
         "portalize",
         "Pressable",
-        "zustand"
+        "zustand",
     ],
     "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "editor.linkedEditing": true,
-    "window.commandCenter": false,
-    "[python]": {
-        "editor.formatOnSave": false,
-        "editor.codeActionsOnSave": {},
-        "editor.defaultFormatter": "ms-python.autopep8"
-    },
     "window.zoomLevel": 1,
     "workbench.editor.enablePreview": false,
     "editor.inlineSuggest.enabled": true,
     "[svg]": {
-        "editor.defaultFormatter": "jock.svg"
+        "editor.defaultFormatter": "jock.svg",
     },
     "svg.preview.mode": "svg",
     "editor.stickyTabStops": true,
     "editor.stickyScroll.enabled": true,
-    "editor.rulers": [
-        80
-    ],
-    "github.copilot.editor.enableAutoCompletions": true,
-    "makefile.configureOnOpen": true,
-    "explorer.fileNesting.patterns": {
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-        "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
-        "*.dart": "${capture}.g.dart",
-        "*.sqlite": "${capture}.${extname}-*",
-        "*.db": "${capture}.${extname}-*",
-        "*.sqlite3": "${capture}.${extname}-*",
-        "*.db3": "${capture}.${extname}-*",
-        "*.sdb": "${capture}.${extname}-*",
-        "*.s3db": "${capture}.${extname}-*"
+    "editor.rulers": [80],
+    "cursor.cpp.disabledLanguages": ["plaintext"],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "kotlin.languageServer.enabled": false,
+    "kotlin.debugAdapter.enabled": false,
+    "files.associations": {
+        ".env": "dotenv"
     },
-    "github.copilot.enable": {
-        "*": false
-    }
+    "extensions.ignoreRecommendations": true,
+    "diffEditor.renderSideBySide": false,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar",
+    },
+    "cursor.composer.usageSummaryDisplay": "always",
+    "window.autoDetectColorScheme": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.defaultInterpreterPath": "/Library/Developer/CommandLineTools/usr/bin/python3",
 }

@@ -3,7 +3,6 @@ alias lsbp="list-services-by-port"
 alias lsp="list-services-by-port"
 
 _open_chrome() {
-    echo
     echo "Opening Chrome: $1"
     echo
     # Check if input is a valid file path
@@ -60,14 +59,6 @@ alias to-gif="video-to-gif"
 alias togif="video-to-gif"
 
 alias vscode="open -a 'Cursor'"
-alias code="cursor"
-alias cdo="cursor"
-alias cde="cursor"
-alias coe="cursor"
-
-alias vs="vscode ."
-alias c.="vscode ."
-alias code.="vscode ."
 
 alias editscripts="code ~/scripts"
 alias edit-scripts="editscripts"
