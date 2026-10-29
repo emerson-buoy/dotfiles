@@ -1,7 +1,7 @@
 export LESS=""
 export GIT_PAGER=cat
 
-GITHUB_USER="${GITHUB_USER:-<your-github-user>}"
+# GITHUB_USER comes from ~/.dotfiles.env
 
 alias add_all="~/scripts/src/sh/add-all-and-commit.sh"
 alias add-all="add_all"
