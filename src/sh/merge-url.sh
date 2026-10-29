@@ -1,6 +1,8 @@
 #!/bin/bash
+# usage: git push 2>&1 | merge-url.sh   or   merge-url.sh "<text>"
 
-url=$(echo "$git_output" | grep -o 'https://[^[:space:]]*')
+input="${*:-$(cat)}"
+url=$(echo "$input" | grep -o 'https://[^[:space:]]*')
 
 # Print the extracted URL
 echo "$url"

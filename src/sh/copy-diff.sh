@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $(git rev-parse --verify master 2>/dev/null) ]; then
+if git rev-parse --verify -q master >/dev/null; then
     echo "Copying diffs from 'master' branch."
     git diff origin/master | pbcopy
 else

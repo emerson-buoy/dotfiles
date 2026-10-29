@@ -2,6 +2,4 @@
 
 COMMAND=$1
 
-osascript -e 'tell app "Terminal"
-   do script $COMMAND
-end tell'
+osascript -e 'on run argv' -e 'tell app "Terminal" to do script (item 1 of argv)' -e 'end run' "$COMMAND"

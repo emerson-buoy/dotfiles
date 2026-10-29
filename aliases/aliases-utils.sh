@@ -37,7 +37,6 @@ alias resetpackages='reset_modules'
 alias npm_reset="rm -rf ./node_modules; npm install; ls -las"
 alias npmreset="npm_reset"
 alias npm-reset="npm_reset"
-alias npmreset="npm_reset"
 alias npmr="npm_reset"
 alias rmp="npm_reset"
 
@@ -104,21 +103,20 @@ alias to-mp4="ffmpeg -i $1 -codec copy $2"
 alias to-mp3="ffmpeg -i $1 -vn -acodec libmp3lame -q:a 4 $2"
 alias tomp3="to-mp3"
 
-alias conceitual="cd /Users/<your-path>/projects/conceptual; clas;"
+alias conceitual="cd ~/projects/conceptual; clas;"
 alias conceptual="conceitual"
-alias pocs="conceptual"
 
 alias yanr="yarn"
 
-alias github="chrome 'https://github.com/<your-path>?tab=repositories'"
+alias github="chrome 'https://github.com/emersondemetrio?tab=repositories'"
 
-alias emerson="cd ~/projects/personal/<your-path>.github.io; pwd"
+alias emerson="cd ~/projects/personal/emersondemetrio.github.io; pwd"
 alias emers="emerson"
 alias emer="emerson"
 alias ems="emerson"
 
 alias sizeof="~/scripts/src/sh/file.sh"
-alias new="~/scripts/new-terminal.sh"
+alias new="~/scripts/src/sh/new-terminal.sh"
 
 alias in_minutes="node ~/scripts/src/js/time-conversion.js"
 alias inminutes="node ~/scripts/src/js/time-conversion.js"

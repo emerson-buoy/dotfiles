@@ -8,7 +8,7 @@
 clear
 abs_path() {
     echo "$(
-        cd $(dirname "$1")
+        cd "$(dirname "$1")" || exit 1
         pwd
     )/$(basename "$1")"
 }
@@ -39,5 +39,5 @@ ffmpeg -y \
 
 echo
 echo
-ls -lhas | grep "gif"
+ls -lhas -- *.gif
 echo "Done!"

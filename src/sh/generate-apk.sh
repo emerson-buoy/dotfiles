@@ -1,7 +1,7 @@
 #!/bin/bash
 
-JAR_PATH="/Users/<your-path>/scripts/android-release-suite/bundletool-all-1.10.0.jar"
-KEY_PATH="/Users/<your-path>/scripts/android-release-suite/my-upload-key.keystore"
+JAR_PATH="$HOME/scripts/android-release-suite/bundletool-all-1.10.0.jar"
+KEY_PATH="$HOME/scripts/android-release-suite/my-upload-key.keystore"
 AAB_PATH=$1
 
 java -jar $JAR_PATH build-apks \

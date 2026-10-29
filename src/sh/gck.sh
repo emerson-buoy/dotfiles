@@ -1,5 +1,5 @@
 #!/bin/bash
-INPUT="$@"
+INPUT="$*"
 
 # Strip Linear URL prefix, keep everything after /issue/
 if [[ "$INPUT" == *"linear.app"*"/issue/"* ]]; then

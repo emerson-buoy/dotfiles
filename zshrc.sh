@@ -60,8 +60,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-export PATH="$(brew --prefix ruby)/bin:$PATH"
-
 eval "$(~/.local/bin/mise activate)"
 
 # bun completions

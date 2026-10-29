@@ -2,9 +2,9 @@
 
 abs_path() {
     echo "$(
-        cd $(dirname "$1")
+        cd "$(dirname "$1")" || exit 1
         pwd
     )/$(basename "$1")"
 }
 
-abs_path $1
+abs_path "$1"
