@@ -21,3 +21,14 @@ get_file_from_android_device() {
 }
 
 alias get_file_from_android="get_file_from_android_device"
+
+# Capacitor (IOS_SIM_ID in ~/.dotfiles.env)
+alias run_android="npx vite build && npx cap sync android && npx cap run android --target Medium_Phone_API_36.1"
+alias run_ios='pnpm run build:mobile && pnpm run sync:ios:dev && pnpm run run:ios --target "$IOS_SIM_ID"'
+
+alias run_android_device="npx vite build && npx cap sync android && npx cap run android"
+alias run-android-device="run_android_device"
+
+alias run-and='run_android'
+alias run-android='run_android'
+alias run-ios='run_ios'

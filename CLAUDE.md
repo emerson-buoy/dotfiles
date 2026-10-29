@@ -8,8 +8,9 @@ A macOS developer productivity toolkit: shell aliases, multi-language utility sc
 
 ## Key Files & Entry Points
 
-- **zshrc.sh** — Sources all alias files and sets up environment. Copy to `~/.zshrc` to activate.
-- **sync.sh** — Syncs local system files back into the repo (aliases, src scripts, VS Code settings).
+- **zshrc.sh** — `~/.zshrc` symlinks here. Sources `~/.dotfiles.env`, all alias files and any `aliases/*.local.sh`.
+- **install.sh** — Runs `src/go/dotinstall`: builds tools, venv, symlinks config, installs the pre-commit leak check.
+- **dotfiles.env.example** — Names of the local values; the real `~/.dotfiles.env` is never committed.
 - **aliases/** — Shell aliases organized by category (git, docker, android, python, backend, etc.).
 - **src/** — Utility scripts by language: `sh/`, `js/`, `python/`, `go/`, `typescript/`.
 - **vs-settings/** — VS Code/Cursor settings backup (settings.json, keybindings, snippets, extensions).
@@ -17,9 +18,9 @@ A macOS developer productivity toolkit: shell aliases, multi-language utility sc
 
 ## Common Commands
 
-### Sync repo from local system
+### Install / update the machine setup
 ```sh
-./sync.sh
+./install.sh      # -n for a dry run
 ```
 
 ### Build Go utilities
@@ -60,5 +61,5 @@ Standalone programs compiled via `build.sh`. Utilities for string case conversio
 ### JS utilities (`src/js/`)
 Plain Node.js scripts — no build step required. `time.js` shows current time in São Paulo, San Francisco, Munich, and local timezone.
 
-### Sync flow
-`sync.sh` copies from the live system locations (`~/aliases/`, `~/src/`, `~/.vscode/`) into this repo. After syncing, changes should be committed to preserve the updated state.
+### Secrets
+Never commit secrets, not even encrypted. Values live in `~/.dotfiles.env` (hand-made) and are used as `$VARS`. Work-only aliases go in gitignored `aliases/*.local.sh`. The pre-commit hook (`dotinstall check`) blocks staged files containing any `.env` value.

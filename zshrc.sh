@@ -1,8 +1,18 @@
+# ~/.zshrc is a symlink to this file (see install.sh)
+
+# Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
+
+# Local values and secrets, never committed (see dotfiles.env.example)
+[ -f ~/.dotfiles.env ] && { set -a; source ~/.dotfiles.env; set +a; }
+
 export NODE_OPTIONS='--trace-deprecation'
+export EDITOR="vim"
 
 alias meld="open -W -a Meld $@"
-
-export EDITOR="vim"
 alias python="python3"
 alias pip="pip3"
 
@@ -15,15 +25,13 @@ source ~/scripts/aliases/aliases-strings.sh
 source ~/scripts/aliases/aliases-android.sh
 source ~/scripts/aliases/aliases-folders.sh
 source ~/scripts/aliases/aliases-docker.sh
-[ -f ~/scripts/aliases/aliases-company.sh ] && source ~/scripts/aliases/aliases-company.sh
+source ~/scripts/aliases/aliases-linear.sh
 
-export NODE_OPTIONS='--trace-deprecation'
-
-alias meld="open -W -a Meld $@"
-export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
-
+# Local-only aliases (gitignored)
+for f in ~/scripts/aliases/*.local.sh(N); do source "$f"; done
 
 # SQLITE settings for M1
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export PYTHON=/opt/homebrew/bin/python3
 export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
@@ -55,9 +63,6 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="$(brew --prefix ruby)/bin:$PATH"
 
 eval "$(~/.local/bin/mise activate)"
-
-export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

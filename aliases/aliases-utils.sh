@@ -205,3 +205,7 @@ alias gal="list-aliases"
 alias calc="node -e 'console.log(eval(process.argv[1]))'"
 
 alias km="exit"
+# dotfiles (see install.sh)
+alias dotinstall="~/scripts/install.sh"
+alias dotcheck="~/scripts/src/go/dotinstall/dotinstall check"
+alias dotext="cursor --list-extensions > ~/scripts/vs-settings/cursor-extensions.txt"

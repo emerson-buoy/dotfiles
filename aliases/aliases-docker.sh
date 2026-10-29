@@ -62,3 +62,16 @@ alias dc-upd="dc_upd"
 alias dc-pud="dc_upd"
 alias dc-udp="dc_udp"
 alias dc-upa="dc_upa"
+
+# Rails + docker compose
+alias dc_rubocop="docker compose exec backend bundle exec rubocop --parallel --cache true"
+alias dc_rubocop_a="docker compose exec backend bundle exec rubocop -A --parallel --cache true"
+alias dc_test_be="docker compose run --rm backend bundle exec rspec"
+alias dc_test_fe="pnpm test:fe --"
+alias dc_migrate="docker compose run --rm backend rails db:migrate && pnpm run test:prepare"
+alias restart_fe="docker compose restart frontend"
+
+alias restart-fe="restart_fe"
+alias res-fe="restart_fe"
+
+alias rails_console="docker compose run --rm backend bundle exec rails console"

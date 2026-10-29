@@ -42,9 +42,35 @@ A collection of productivity tools and aliases for macOS development workflow.
 
 ## Installation
 
-1. Clone this repository
-2. Install required software
-3. Copy files to your home.
+This repo is the live copy: it lives at `~/scripts` and your shell uses it directly.
+
+1. Clone it: `git clone https://github.com/emersondemetrio/dotfiles.git ~/scripts`
+2. Install required software (plus [Go](https://go.dev/))
+3. Create your local values file: `cp ~/scripts/dotfiles.env.example ~/.dotfiles.env` and fill it in
+4. Run `~/scripts/install.sh` (add `-n` for a dry run)
+
+`install.sh` is safe to re-run (alias `dotinstall`). It:
+
+- builds the Go tools in `src/go`
+- makes scripts executable
+- creates the Python venv in `.venv` from `src/python/requirements.txt`
+- symlinks `~/.zshrc` and the Cursor settings, keybindings and snippets into this repo, backing up what was there to `~/.dotfiles-backup/`
+- installs missing Cursor extensions from `vs-settings/cursor-extensions.txt`
+- warns about values missing from `~/.dotfiles.env`
+- installs a pre-commit hook that blocks commits containing any value from `~/.dotfiles.env`
+
+## Secrets and local stuff
+
+Nothing private is ever committed, not even encrypted.
+
+- `~/.dotfiles.env`: tokens and machine values, created by hand, sourced by `zshrc.sh`. Aliases use them as `$VARS`.
+- `aliases/*.local.sh`: gitignored aliases for work or this machine only, sourced if present.
+
+## Day to day
+
+- Edit files in `~/scripts` directly, then commit. Symlinked config (zshrc, Cursor) is the same file.
+- `dotext` refreshes the Cursor extension list.
+- `dotcheck` runs the leak check by hand.
 
 
 ## Directory Structure
@@ -67,5 +93,7 @@ A collection of productivity tools and aliases for macOS development workflow.
 │   └── go/                # Go utilities
 ├── vs-settings/            # VSCode configurations
 ├── android-release-suite/  # Android release tools
-└── sync.sh                # Main sync script
+├── zshrc.sh               # ~/.zshrc symlinks here
+├── dotfiles.env.example   # Names of the values in ~/.dotfiles.env
+└── install.sh             # Setup, runs src/go/dotinstall
 ```

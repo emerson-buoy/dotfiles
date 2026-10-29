@@ -1,7 +1,7 @@
 # alias claude="chrome 'https://claude.ai/new'"
 
-alias prompt="~/scripts/src/python/ai.py"
-alias ollama_prompt="~/scripts/src/python/ai.py -l 'ollama'"
+alias prompt="~/scripts/.venv/bin/python ~/scripts/src/python/ai.py"
+alias ollama_prompt="~/scripts/.venv/bin/python ~/scripts/src/python/ai.py -l 'ollama'"
 
 alias t="prompt --task translate"
 alias tp="prompt --task translate -ol 'Portuguese'"

@@ -1,59 +1,6 @@
-export LINEAR_PROJECT_NAME="<your-linear-workspace>"
-export IOS_SIM_ID="<your-ios-simulator-id>"
-
-alias company="cdp; cd company; clas;";
-alias artist="company";
-
-export TEST_USER_FIRST_NAME="Emerson"
-
-alias linear="chrome https://linear.app/$LINEAR_PROJECT_NAME/my-issues/assigned"
+# Needs LINEAR_PROJECT_NAME in ~/.dotfiles.env
+alias linear='chrome "https://linear.app/$LINEAR_PROJECT_NAME/my-issues/assigned"'
 alias lienar="linear"
-
-# Projects
-alias ui="company; cd messenger-ui; gst;"
-alias be="company; cd company; gst"
-alias companybe="company; be;"
-alias auth="company; cd messenger-ui-auth; gst;"
-alias coats="auth"
-
-alias ai="company; cd creator-ai; gst"
-
-# Git
-alias masters="cdp; cd masters; clas"
-alias actions="chrome https://github.com/companyco/company/actions"
-
-# Mobile Dev
-alias mobile="company; cd messenger-ui-mobile; gst;"
-alias mobi="mobile"
-
-# Infra
-alias infra="company; cd company-infra; gst"
-
-alias run_android="npx vite build && npx cap sync android && npx cap run android --target Medium_Phone_API_36.1"
-alias run_ios="pnpm run build:mobile && pnpm run sync:ios:dev && pnpm run run:ios --target $IOS_SIM_ID"
-
-alias run_android_device="npx vite build && npx cap sync android && npx cap run android"
-alias run-android-device="run_android_device"
-
-alias run-and='run_android'
-alias run-android='run_android'
-alias run-ios='run_ios'
-
-export CAPAWESOME_TOKEN="<your-token>"
-
-alias dc_rubocop="docker compose exec backend bundle exec rubocop --parallel --cache true"
-alias dc_rubocop_a="docker compose exec backend bundle exec rubocop -A --parallel --cache true"
-alias dc_test_be="docker compose run --rm backend bundle exec rspec"
-alias dc_test_fe="pnpm test:fe --"
-alias dc_migrate="docker compose run --rm backend rails db:migrate && pnpm run test:prepare"
-alias restart_fe="docker compose restart frontend"
-
-alias restart-fe="restart_fe"
-alias res-fe="restart_fe"
-
-alias rails_console="docker compose run --rm backend bundle exec rails console"
-
-alias lintbe="cd apps/core; pnpm lint:eslint;be"
 
 # Branch like dev-24139-some-slug → https://linear.app/$LINEAR_PROJECT_NAME/issue/dev-24139
 this_issue() {
@@ -85,4 +32,3 @@ open-linear() {
 alias this-issue='this_issue'
 alias thisissue="this_issue"
 alias thisi="this_issue"
-
