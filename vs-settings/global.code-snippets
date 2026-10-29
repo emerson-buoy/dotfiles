@@ -64,7 +64,7 @@
 		"description": "Create new Mobile Component",
 		"body": [
 			"import React, { useEffect, useState } from 'react';",
-			"import { Box, Typography } from '@drivekyte/mobile-components';\n",
+			"import { Box, Typography } from '${9:./components}';\n",
 			"type $1Props = {\n",
 			"}\n",
 			"const $1 = ({ }: $1Props) => {",

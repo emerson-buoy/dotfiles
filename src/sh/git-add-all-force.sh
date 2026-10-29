@@ -23,11 +23,14 @@ echo "Current diff:"
 git diff --name-only
 git add .
 
-if [[ $PWD == *"surfer-mobile"* ]]; then
-    echo "=> Surfer mobile detected, adding yarn.lock"
-    git add ../../yarn.lock
-fi
+# In a monorepo subfolder, also pick up the lockfile at the root
+REPO_ROOT=$(git rev-parse --show-toplevel)
+for lock in yarn.lock pnpm-lock.yaml package-lock.json; do
+    if [ -f "$REPO_ROOT/$lock" ]; then
+        git add "$REPO_ROOT/$lock"
+    fi
+done
 
 git commit --no-verify --amend --no-edit
-git push -f -u origin $BRANCH_NAME
+git push -f -u origin "$BRANCH_NAME"
 git status

@@ -1,21 +1,9 @@
 .zshrc
 
-aliases/aliases-kyte.sh
-aliases/aliases-ops-tooling.sh
-aliases/aliases-surfer.sh
-aliases/aliases-flaggr.sh
-aliases/aliases-fleet.sh
 aliases/*.local.sh
 
 aliases/chrome.json
 
-src/verify-user.sh
-src/new-react-component
-src/open-fleet*
-src/new_branch.sh
-src/random-pass.py
-src/start-all.sh
-src/open-issue.sh
 
 src/go/**/*
 !src/go/**/*.go
